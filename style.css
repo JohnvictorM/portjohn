@@ -1309,3 +1309,42 @@ nav .nav-btn:hover {
     z-index: 0;
   }
 }
+/* =========================================
+   🚨 FINAL FIX — EXPERIENCE NOT VISIBLE ON GITHUB
+========================================= */
+
+@media (max-width: 768px) {
+
+  /* Stop hero from pushing content down too much */
+  .hero.menu-open {
+    margin-top: 150px !important;   /* was 280px */
+  }
+
+  /* Guarantee all sections are visible */
+  section {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Ensure EXP section cannot hide */
+  #experience {
+    margin-top: 40px !important;
+    z-index: 5 !important;
+  }
+
+  /* Make sure nav NEVER overlaps sections */
+  header {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  /* Prevent any accidental hiding */
+  body, html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+}
+
